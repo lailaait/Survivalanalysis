@@ -40,3 +40,7 @@ MPH9
 MPH10 <- pehaz(dem04$duree_avt_ar1, delta=dem04$censur_ar1, width=24, min.time=36, max.time=60)
 MPH10
 0.06290048
+
+
+## create a graph with respect to interval selection as the one picked in Fremigacci & Terracol (2013):
+## import table
