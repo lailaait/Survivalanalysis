@@ -13,7 +13,7 @@ MPH10 <- pehaz(dem10$duree_avt_ar1, delta=dem10$censur_ar1, width=2, min.time=0,
 
 plot(MPH04, lwd=3, col="black", ann=FALSE)
 par(new=TRUE)
-plot(MPH06, axes=FALSE,col='green', main="MPH model, piecewise exponential constant (binwidth=2)", xlab="Time", ylab="Hazard Rate")
+plot(MPH06, axes=FALSE,col='red', main="MPH model, piecewise exponential constant (binwidth=2)", xlab="Time", ylab="Hazard Rate")
 legend("topright", c("2004","2006"), col=(1:2), lwd=0.5)
 
 
@@ -23,6 +23,24 @@ plot(MPH05, ann=FALSE, axes=FALSE,col='red')
 par(new=TRUE)
 plot(MPH06, axes=FALSE,col='green',  main="MPH model, piecewise exponential constant (binwidth=2)", xlab="Time", ylab="Hazard Rate")
 legend("topright", c("2004","2005","2006"), col=(1:3), lwd=0.5)
+
+
+
+# Pehaz measures piecewise exponential with bins of equal size:
+MPH04 <- pehaz(dem04$duree_avt_ar1, delta=dem04$censur_ar1, width=2, min.time=0, max.time=NA)
+MPH05 <- pehaz(dem05$duree_avt_ar1, delta=dem05$censur_ar1, width=2, min.time=0, max.time=NA)
+MPH06 <- pehaz(dem06$duree_avt_ar1, delta=dem06$censur_ar1, width=2, min.time=0, max.time=NA)
+MPH08 <- pehaz(dem08$duree_avt_ar1, delta=dem08$censur_ar1, width=2, min.time=0, max.time=NA)
+MPH10 <- pehaz(dem10$duree_avt_ar1, delta=dem10$censur_ar1, width=2, min.time=0, max.time=NA)
+
+
+plot(MPH04, lwd=3, col="black", ann=FALSE)
+par(new=TRUE)
+plot(MPH05, ann=FALSE, axes=FALSE,col='red')
+par(new=TRUE)
+plot(MPH06, axes=FALSE,col='green',  main="MPH model, piecewise exponential constant (binwidth=2)", xlab="Time", ylab="Hazard Rate")
+legend("topright", c("2004","2005","2006"), col=(1:3), lwd=0.5)
+
 
 
 # RISK FIRST RA
