@@ -48,19 +48,19 @@ legend("topright", c("2004","2005","2006","2008","2010"), col=(1:5), lwd=0.5)
 ## analysis per gender:
 kmsurvival1a04 <- survfit(Surv(dem04$duree_avt_ar1, dem04$censur_ar1)~ dem04$SEXE)
 plot(kmsurvival1a04, col=c(1:2),
-     main="Hazard rates of starting a RA by gender (Kaplan-Meier)",
+     main="Hazard rates of starting a RA by gender (K-M in 2004)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Male","Female"), col=(1:2), lwd=0.5)
 
 kmsurvival1a06 <- survfit(Surv(dem06$duree_avt_ar1, dem06$censur_ar1)~ dem06$SEXE)
 plot(kmsurvival1a06, col=c(1:2),
-     main="Hazard rates of starting a RA by gender (Kaplan-Meier)",
+     main="Hazard rates of starting a RA by gender (K-M in 2006)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Male","Female"), col=(1:2), lwd=0.5)
 
 kmsurvival1a08 <- survfit(Surv(dem08$duree_avt_ar1, dem08$censur_ar1)~ dem08$SEXE)
 plot(kmsurvival1a08, col=c(1:2),
-     main="Hazard rates of starting a RA by gender (Kaplan-Meier)",
+     main="Hazard rates of starting a RA by gender (K-M in 2008)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Male","Female"), col=(1:2), lwd=0.5)
 
@@ -77,20 +77,20 @@ legend("topright", c("Male","Female"), col=(1:2), lwd=0.5)
 # if age>=51 then ageq=8; 
 
 kmsurvival2a04 <- survfit(Surv(dem04$duree_avt_ar1, dem04$censur_ar1)~ dem04$ageq)
-plot(kmsurvival204, col=c(1:8),
-     main="Hazard rates of starting a RA by age (Kaplan-Meier)",
+plot(kmsurvival2a04, col=c(1:8),
+     main="Hazard rates of starting a RA by age (K-M in 2004)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Under 20", "20 to 25", "25 to 30", "30 to 35", "35 to 40", "40 to 45", "45 to 50", "Over 50"), col=(1:8), lwd=0.5)
 
 kmsurvival2a06 <- survfit(Surv(dem06$duree_avt_ar1, dem06$censur_ar1)~ dem06$ageq)
-plot(kmsurvival206, col=c(1:8),
-     main="Hazard rates of starting a RA by age (Kaplan-Meier)",
+plot(kmsurvival2a06, col=c(1:8),
+     main="Hazard rates of starting a RA by age (K-M in 2006)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Under 20", "20 to 25", "25 to 30", "30 to 35", "35 to 40", "40 to 45", "45 to 50", "Over 50"), col=(1:8), lwd=0.5)
 
 kmsurvival2a08 <- survfit(Surv(dem08$duree_avt_ar1, dem08$censur_ar1)~ dem08$ageq)
-plot(kmsurvival208, col=c(1:8),
-     main="Hazard rates of starting a RA by age (Kaplan-Meier)",
+plot(kmsurvival2a08, col=c(1:8),
+     main="Hazard rates of starting a RA by age (K-M in 2008)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Under 20", "20 to 25", "25 to 30", "30 to 35", "35 to 40", "40 to 45", "45 to 50", "Over 50"), col=(1:8), lwd=0.5)
 
@@ -99,19 +99,19 @@ legend("topright", c("Under 20", "20 to 25", "25 to 30", "30 to 35", "35 to 40",
 ## analysis per sector of activity:
 kmsurvival304 <- survfit(Surv(dem04$duree_avt_ar1, dem04$censur_ar1)~ dem04$metier_service)
 plot(kmsurvival304, col=c(1:2),
-     main="Hazard rates of starting a RA if tertiary sector work",
+     main="Hazard rates of starting a RA if tertiary sector work (2004)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Yes", "No"), col=(1:2), lwd=0.5)
 
 kmsurvival306 <- survfit(Surv(dem06$duree_avt_ar1, dem06$censur_ar1)~ dem06$metier_service)
 plot(kmsurvival306, col=c(1:2),
-     main="Hazard rates of starting a RA if tertiary sector work",
+     main="Hazard rates of starting a RA if tertiary sector work (2006)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Yes", "No"), col=(1:2), lwd=0.5)
 
 kmsurvival308 <- survfit(Surv(dem08$duree_avt_ar1, dem08$censur_ar1)~ dem08$metier_service)
 plot(kmsurvival308, col=c(1:2),
-     main="Hazard rates of starting a RA if tertiary sector work",
+     main="Hazard rates of starting a RA if tertiary sector work (2008)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Yes", "No"), col=(1:2), lwd=0.5)
 
@@ -119,19 +119,19 @@ legend("topright", c("Yes", "No"), col=(1:2), lwd=0.5)
 
 kmsurvival404 <- survfit(Surv(dem04$duree_avt_ar1, dem04$censur_ar1)~ dem04$metier_industrie)
 plot(kmsurvival404, col=c(1:2),
-     main="Hazard rates of starting a RA for industry sector workers",
+     main="Surv. of starting a RA in industry sector (2004)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Yes", "No"), col=(1:2), lwd=0.5)
 
 kmsurvival406 <- survfit(Surv(dem06$duree_avt_ar1, dem06$censur_ar1)~ dem06$metier_industrie)
 plot(kmsurvival406, col=c(1:2),
-     main="Hazard rates of starting a RA for industry sector workers",
+     main="Surv. of starting a RA in industry sector (2006)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Yes", "No"), col=(1:2), lwd=0.5)
 
 kmsurvival408 <- survfit(Surv(dem08$duree_avt_ar1, dem08$censur_ar1)~ dem08$metier_industrie)
 plot(kmsurvival408, col=c(1:2),
-     main="Hazard rates of starting a RA for industry sector workers",
+     main="Hazard rates of starting a RA in industry sector (2008)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Yes", "No"), col=(1:2), lwd=0.5)
 
@@ -139,19 +139,19 @@ legend("topright", c("Yes", "No"), col=(1:2), lwd=0.5)
 
 kmsurvival504 <- survfit(Surv(dem04$duree_avt_ar1, dem04$censur_ar1)~ dem04$metier_commerce)
 plot(kmsurvival504, col=c(1:2),
-     main="Hazard rates of starting a RA for trade sector workers",
+     main="Surv. of starting a RA in trade sector (2004)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Yes", "No"), col=(1:2), lwd=0.5)
 
 kmsurvival506 <- survfit(Surv(dem06$duree_avt_ar1, dem06$censur_ar1)~ dem06$metier_commerce)
 plot(kmsurvival506, col=c(1:2),
-     main="Hazard rates of starting a RA for trade sector workers",
+     main="Surv. of starting a RA in trade sector (2006)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Yes", "No"), col=(1:2), lwd=0.5)
 
 kmsurvival508 <- survfit(Surv(dem08$duree_avt_ar1, dem08$censur_ar1)~ dem08$metier_commerce)
 plot(kmsurvival508, col=c(1:2),
-     main="Hazard rates of starting a RA for trade sector workers",
+     main="Surv. of starting a RA in trade sector (2008)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Yes", "No"), col=(1:2), lwd=0.5)
 
@@ -159,19 +159,19 @@ legend("topright", c("Yes", "No"), col=(1:2), lwd=0.5)
 # per type of contract
 kmsurvival604 <- survfit(Surv(dem04$duree_avt_ar1, dem04$censur_ar1)~ dem04$contrat_cdi)
 plot(kmsurvival604, col=c(1:2),
-     main="Hazard rates of starting a RA for long term (CDI) jobs",
+     main="Hazard rates of starting a RA for long term (CDI) jobs (2004)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Yes", "No"), col=(1:2), lwd=0.5)
 
 kmsurvival606 <- survfit(Surv(dem06$duree_avt_ar1, dem06$censur_ar1)~ dem06$contrat_cdi)
 plot(kmsurvival606, col=c(1:2),
-     main="Hazard rates of starting a RA for long term (CDI) jobs",
+     main="Hazard rates of starting a RA for long term (CDI) jobs (2006)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Yes", "No"), col=(1:2), lwd=0.5)
 
 kmsurvival608 <- survfit(Surv(dem08$duree_avt_ar1, dem08$censur_ar1)~ dem08$contrat_cdi)
 plot(kmsurvival608, col=c(1:2),
-     main="Hazard rates of starting a RA for long term (CDI) jobs",
+     main="Hazard rates of starting a RA for long term (CDI) jobs (2008)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Yes", "No"), col=(1:2), lwd=0.5)
 
@@ -282,19 +282,19 @@ for (i in 1:length(dem10$experience)){
 ## analysis per experience:
 kmsurvival704 <- survfit(Surv(dem04$duree_avt_ar1, dem04$censur_ar1)~ dem04$exper)
 plot(kmsurvival704, col=c(1:2),
-     main="Hazard rates of starting a RA by level of experience (Kaplan-Meier)",
+     main="Hazard rates of starting a RA by experience (2004)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("under 5","over 15"), col=(1:2), lwd=0.5)
 
 kmsurvival706 <- survfit(Surv(dem06$duree_avt_ar1, dem06$censur_ar1)~ dem06$exper)
 plot(kmsurvival706, col=c(1:2),
-     main="Hazard rates of starting a RA by level of experience (Kaplan-Meier)",
+     main="Hazard rates of starting a RA by experience (2006)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("under 5","over 15"), col=(1:2), lwd=0.5)
 
 kmsurvival708 <- survfit(Surv(dem08$duree_avt_ar1, dem08$censur_ar1)~ dem08$exper)
 plot(kmsurvival708, col=c(1:2),
-     main="Hazard rates of starting a RA by level of experience (Kaplan-Meier)",
+     main="Hazard rates of starting a RA by experience (2008)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("under 5","over 15"), col=(1:2), lwd=0.5)
 
@@ -302,40 +302,40 @@ legend("topright", c("under 5","over 15"), col=(1:2), lwd=0.5)
 ## analysis on the criterion of education:
 kmsurvival804 <- survfit(Surv(dem04$duree_avt_ar1, dem04$censur_ar1)~ dem04$Diplome_oui)
 plot(kmsurvival804, col=c(1:2),
-     main="Hazard rates of starting a RA by gender (Kaplan-Meier)",
+     main="Hazard rates of starting a RA by gender (2004)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Educated", "Not educated"), col=(1:2), lwd=0.5)
 
 kmsurvival806 <- survfit(Surv(dem06$duree_avt_ar1, dem06$censur_ar1)~ dem06$Diplome_oui)
 plot(kmsurvival806, col=c(1:2),
-     main="Hazard rates of starting a RA by gender (Kaplan-Meier)",
+     main="Hazard rates of starting a RA by gender (2006)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Educated", "Not educated"), col=(1:2), lwd=0.5)
 
 kmsurvival808 <- survfit(Surv(dem08$duree_avt_ar1, dem08$censur_ar1)~ dem08$Diplome_oui)
 plot(kmsurvival808, col=c(1:2),
-     main="Hazard rates of starting a RA by gender (Kaplan-Meier)",
+     main="Hazard rates of starting a RA by gender (2008)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Educated", "Not educated"), col=(1:2), lwd=0.5)
 
 
 ## analysis on the criterion of being a temporary worker or not:
 
-kmsurvival904 <- survfit(Surv(dem04$duree_avt_ar1, dem04$censur_ar1)~ dem04$INTERIM)
+kmsurvival904 <- survfit(Surv(dem04$duree_avt_ar1, dem04$censur_ar1)~ dem04$interimaire)
 plot(kmsurvival904, col=c(1:2),
-     main="Hazard rates of starting a RA by gender (Kaplan-Meier)",
+     main="Hazard rates of starting a RA by gender (2004)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Interimaire", "Not Interimaire"), col=(1:2), lwd=0.5)
 
-kmsurvival906 <- survfit(Surv(dem06$duree_avt_ar1, dem06$censur_ar1)~ dem06$INTERIM)
+kmsurvival906 <- survfit(Surv(dem06$duree_avt_ar1, dem06$censur_ar1)~ dem06$interimaire)
 plot(kmsurvival906, col=c(1:2),
-     main="Hazard rates of starting a RA by gender (Kaplan-Meier)",
+     main="Hazard rates of starting a RA by gender (2006)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Interimaire", "Not Interimaire"), col=(1:2), lwd=0.5)
 
-kmsurvival908 <- survfit(Surv(dem08$duree_avt_ar1, dem08$censur_ar1)~ dem08$INTERIM)
+kmsurvival908 <- survfit(Surv(dem08$duree_avt_ar1, dem08$censur_ar1)~ dem08$interimaire)
 plot(kmsurvival908, col=c(1:2),
-     main="Hazard rates of starting a RA by gender (Kaplan-Meier)",
+     main="Hazard rates of starting a RA by gender (2008)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Interimaire", "Not Interimaire"), col=(1:2), lwd=0.5)
 
@@ -381,17 +381,16 @@ legend("topright", c("2004","2006","2008"), col=(1:3), lwd=0.5)
 
 
 kmsurvival1b <- survfit(Surv(dem04$duree_avt_interrup1, dem04$censur_interrup1)~ dem04$SEXE)
-plot(kmsurvival1, col=c(1:2),
-     main="K-M estimates of not being compensated for a RA per gender",
+plot(kmsurvival1b, col=c(1:2),
+     main="K-M estimates of being in RA and not compensated (2004)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Male","Female"), col=(1:2), lwd=0.5)
 
-kmsurvival2b <- survfit(Surv(dem04$duree_avt_interrup1, dem04$censur_interrup1)~ dem04$ageq)
-plot(kmsurvival2, col=c(1:8),
-     main="K-M estimates of not being compensated for a RA per age",
+kmsurvival2b <- survfit(Surv(dem08$duree_avt_interrup1, dem08$censur_interrup1)~ dem08$SEXE)
+plot(kmsurvival2b, col=c(1:8),
+     main="K-M estimates of being in RA and not compensated (2008)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Under 20", "20 to 25", "25 to 30", "30 to 35", "35 to 40", "40 to 45", "45 to 50", "Over 50"), col=(1:8), lwd=0.5)
-
 
 
 # Creating a variable for specific subcases of "motins":
@@ -409,7 +408,7 @@ dem04$motins2 <- matrix("NA", nrow =length(dem04$MOTINS), ncol =1)
 
 kmsurvival2b <- survfit(Surv(dem04$duree_avt_ar1, dem04$censur_ar1)~ dem04$motins2)
 plot(kmsurvival2b, col=c(1:2),
-     main="K-M estimates of starting a RA per unemployment motive",
+     main="K-M estimates of starting a RA per unemp motive (2004)",
      xlab="Number of months", ylab="Survival Probability")
 legend("topright", c("Resignation", "End of contract"), col=(1:2), lwd=0.5)
 
@@ -425,9 +424,9 @@ par(new=TRUE)
 plot(indemsurv2a06, ann=FALSE, axes=FALSE,col='red')
 par(new=TRUE)
 plot(indemsurv2a08, axes=FALSE,col='green', 
-     main="Kaplan-Meier estimates of survival to start a RA for over 110H/months",
+     main="Kaplan-Meier estimates of starting RA > 110H/months",
      xlab="Number of months", ylab="Survival Probability")
-legend("topright", c("2004", "2006","2008"), col=(1:5), lwd=0.5)
+legend("topright", c("2004", "2006","2008"), col=(1:3), lwd=0.5)
 # the 95% confidence interval is narrowingly around the initial curve, which makes our observations quite solid
 
 
@@ -441,11 +440,13 @@ par(new=TRUE)
 plot(indemsur36a06, ann=FALSE, axes=FALSE,col='red')
 par(new=TRUE)
 plot(indemsur36a08, axes=FALSE,col='green', 
-     main="Kaplan-Meier estimates of survival to start a RA for over 110H/months",
+     main="Kaplan-Meier estimates of starting RA > 136H/months",
      xlab="Number of months", ylab="Survival Probability")
-legend("topright", c("2004", "2006","2008"), col=(1:5), lwd=0.5)
+legend("topright", c("2004", "2006","2008"), col=(1:3), lwd=0.5)
 # the 95% confidence interval is narrowingly around the initial curve, which makes our observations quite solid
 
+
+####### NOT USED IN REPORT ######
 
 # per number of unemployment months left
 dem04$INDEM_RESTANT2 <- dem04$INDEM_RESTANT[which(dem04$INDEM_RESTANT >= "0")] 
