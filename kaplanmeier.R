@@ -442,7 +442,7 @@ par(new=TRUE)
 plot(indemsur36a08, axes=FALSE,col='green', 
      main="Kaplan-Meier estimates of starting RA > 136H/months",
      xlab="Number of months", ylab="Survival Probability")
-legend("topright", c("2004", "2006","2008"), col=(1:3), lwd=0.5)
+legend("bottomright", c("2004", "2006","2008"), col=(1:3), lwd=0.5)
 # the 95% confidence interval is narrowingly around the initial curve, which makes our observations quite solid
 
 
