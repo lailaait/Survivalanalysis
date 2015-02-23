@@ -3,7 +3,8 @@
 
 library(muhaz)
 
-# Pehaz measures piecewise exponential with bins of equal size:
+# PRATIQUES EXTENSIVES (decision to start a RA):
+
 MPH04 <- pehaz(dem04$duree_avt_ar1, delta=dem04$censur_ar1, width=2, min.time=0, max.time=NA)
 MPH05 <- pehaz(dem05$duree_avt_ar1, delta=dem05$censur_ar1, width=2, min.time=0, max.time=NA)
 MPH06 <- pehaz(dem06$duree_avt_ar1, delta=dem06$censur_ar1, width=2, min.time=0, max.time=NA)
@@ -33,14 +34,12 @@ MPH06 <- pehaz(dem06$duree_avt_ar1, delta=dem06$censur_ar1, width=2, min.time=0,
 MPH08 <- pehaz(dem08$duree_avt_ar1, delta=dem08$censur_ar1, width=2, min.time=0, max.time=NA)
 MPH10 <- pehaz(dem10$duree_avt_ar1, delta=dem10$censur_ar1, width=2, min.time=0, max.time=NA)
 
-
 plot(MPH04, lwd=3, col="black", ann=FALSE)
 par(new=TRUE)
 plot(MPH05, ann=FALSE, axes=FALSE,col='red')
 par(new=TRUE)
 plot(MPH06, axes=FALSE,col='green',  main="MPH model, piecewise exponential constant (binwidth=2)", xlab="Time", ylab="Hazard Rate")
 legend("topright", c("2004","2005","2006"), col=(1:3), lwd=0.5)
-
 
 
 # RISK FIRST RA
@@ -73,3 +72,38 @@ MPH10
 0.06290048
 
 ## create a graph with respect to interval selection as the one picked in Fremigacci & Terracol (2013):
+
+
+
+### PRATIQUES INTENSIVES DACTIVITE REDUITE
+
+MPH04 <- pehaz(dem04$duree_avt_ar1, delta=dem04$PREM_SUP_110, width=2, min.time=0, max.time=NA)
+MPH06 <- pehaz(dem06$duree_avt_ar1, delta=dem06$PREM_SUP_110, width=2, min.time=0, max.time=NA)
+MPH08 <- pehaz(dem08$duree_avt_ar1, delta=dem08$PREM_SUP_110, width=2, min.time=0, max.time=NA)
+MPH10 <- pehaz(dem10$duree_avt_ar1, delta=dem10$PREM_SUP_110, width=2, min.time=0, max.time=NA)
+
+plot(MPH04, lwd=3, col="black", ann=FALSE)
+par(new=TRUE)
+plot(MPH06, ann=FALSE, axes=FALSE,col='red')
+par(new=TRUE)
+plot(MPH08, axes=FALSE,col='green')
+par(new=TRUE)
+plot(MPH10, axes=FALSE,col='blue',main="MPH model, piecewise exponential constant (binwidth=2)", xlab="Time", ylab="Hazard Rate")
+legend("topright", c("2004","2006","2008", "2010"), col=(1:4), lwd=0.5)
+
+
+
+MPH04 <- pehaz(dem04$duree_avt_ar1, delta=dem04$PREM_SUP_136, width=2, min.time=0, max.time=NA)
+MPH06 <- pehaz(dem06$duree_avt_ar1, delta=dem06$PREM_SUP_136, width=2, min.time=0, max.time=NA)
+MPH08 <- pehaz(dem08$duree_avt_ar1, delta=dem08$PREM_SUP_136, width=2, min.time=0, max.time=NA)
+MPH10 <- pehaz(dem10$duree_avt_ar1, delta=dem10$PREM_SUP_136, width=2, min.time=0, max.time=NA)
+
+plot(MPH04, lwd=3, col="black", ann=FALSE)
+par(new=TRUE)
+plot(MPH06, ann=FALSE, axes=FALSE,col='red')
+par(new=TRUE)
+plot(MPH08, axes=FALSE,col='green')
+par(new=TRUE)
+plot(MPH10, axes=FALSE,col='blue',main="MPH model, piecewise exponential constant (binwidth=2)", xlab="Time", ylab="Hazard Rate")
+legend("topright", c("2004","2006","2008", "2010"), col=(1:4), lwd=0.5)
+
