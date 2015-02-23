@@ -1,3 +1,4 @@
+### HOURLY DISTRIBUTIONS FOR SUBGROUP (UNEMPLOYED FOR OVER 12 MONTHS AND HAVING A RA)
 
 dat1204 <- read.csv("chom12mois04.csv", header=T, sep=",")
 
