@@ -1,98 +1,48 @@
-## WE FOCUS PARTICULARLY ON THE PROFILE OF PEOPLE UNEMPLOYED FOR AT LEAST A YEAR:
 
-# 1st month:
-dem04$NBHEUR_AR1bis <- matrix("NA", nrow =length(dem04$nbheur_ar1), ncol=1)
-# Creating a dummy for number of hours worked:
-for (i in 1:length(dem04$nbheur_ar1)){
-  if (dem04$duree_de_mois[i] >= "12"){
-    dem04$NBHEUR_AR1bis[i] <- dem04$nbheur_ar1[i]
-  } 
-}
+dat1204 <- read.csv("chom12mois04.csv", header=T, sep=",")
 
-dem08$NBHEUR_AR1bis <- matrix("NA", nrow =length(dem08$nbheur_ar1), ncol=1)
-# Creating a dummy for number of hours worked:
-for (i in 1:length(dem08$nbheur_ar1)){
-  if (dem08$duree_de_mois[i] >= "12"){
-    dem08$NBHEUR_AR1bis[i] <- dem08$nbheur_ar1[i]
-  } 
-}
+dem1204 <- tbl_df(dat1204)
 
-# 3rd month:
-dem04$NBHEUR_AR3bis <- matrix("NA", nrow =length(dem04$nbheur_ar3), ncol=1)
-# Creating a dummy for number of hours worked:
-for (i in 1:length(dem04$nbheur_ar3)){
-  if (dem04$duree_de_mois[i] >= "12"){
-    dem04$NBHEUR_AR3bis[i] <- dem04$nbheur_ar3[i]
-  } 
-}
-
-# 6th month:
-dem04$NBHEUR_AR6bis <- matrix("NA", nrow =length(dem04$nbheur_ar6), ncol=1)
-# Creating a dummy for number of hours worked:
-for (i in 1:length(dem04$nbheur_ar6)){
-  if (dem04$duree_de_mois[i] >= "12"){
-    dem04$NBHEUR_AR6bis[i] <- dem04$nbheur_ar6[i]
-  } 
-}
-
-# 12th month:
-dem04$NBHEUR_AR12bis <- matrix("NA", nrow =length(dem04$nbheur_ar12), ncol=1)
-# Creating a dummy for number of hours worked:
-for (i in 1:length(dem04$nbheur_ar12)){
-  if (dem04$duree_de_mois[i] >= "12"){
-    dem04$NBHEUR_AR12bis[i] <- dem04$nbheur_ar12[i]
-  } 
-}
-
-dem08$NBHEUR_AR12bis <- matrix("NA", nrow =length(dem08$nbheur_ar12), ncol=1)
-# Creating a dummy for number of hours worked:
-for (i in 1:length(dem08$nbheur_ar12)){
-  if (dem08$duree_de_mois[i] >= "12"){
-    dem08$NBHEUR_AR12bis[i] <- dem08$nbheur_ar12[i]
-  } 
-}
-
-####### 1er mois de RA
-mytable <- table(dem04$NBHEUR_AR1bis, dem04$duree_de_mois)
+mytable <- table(dem1204$salpourc_ar1)
 x <- round(prop.table(mytable), digits=4) * 100
-barplot(x, beside = T, main="Distrib nb hours for 1st RA (2004, unemp>12mths)", xlab="Type of contract", ylab="Frequency", col = "lightblue", ylim=c(0,25))
+barplot(x, main="Distribution of RA replacement rates, 1st RA month (2004)", xlab="Replacement rates", ylab="Frequency", col = "lightblue", xlim=c(0,200), ylim=c(0,6))
 abline(h=seq(0,100,10), col = adjustcolor("black", alpha.f = 0.2),
        lty = 6)
 
-mytable <- table(dem08$NBHEUR_AR1bis, dem08$duree_de_mois)
+mytable <- table(dem1204$salpourc_ar6)
 x <- round(prop.table(mytable), digits=4) * 100
-barplot(x, beside = T, main="Distrib nb hours for 1st RA (2008, unemp>12mths)", xlab="Type of contract", ylab="Frequency", col = "lightblue", ylim=c(0,25))
+barplot(x, main="Distribution of RA replacement rates, 6th RA month (2004)", xlab="Replacement rates", ylab="Frequency", col = "lightblue", xlim=c(0,150), ylim=c(0,6))
 abline(h=seq(0,100,10), col = adjustcolor("black", alpha.f = 0.2),
        lty = 6)
 
-####### 3eme mois de RA
-mytable <- table(dem04$NBHEUR_AR3bis, dem04$duree_de_mois)
+mytable <- table(dem1204$salpourc_ar12)
 x <- round(prop.table(mytable), digits=4) * 100
-barplot(x, beside = T, main="Distrib nb hours for 3rd RA month (2004, unemp>12mths)", xlab="Type of contract", ylab="Frequency", col = "lightblue", ylim=c(0,25))
+barplot(x, main="Distribution of RA replacement rates, 12th RA month (2004)", xlab="Replacement rates", ylab="Frequency", col = "lightblue", xlim=c(0,150), ylim=c(0,6))
 abline(h=seq(0,100,10), col = adjustcolor("black", alpha.f = 0.2),
        lty = 6)
 
-####### 6eme mois de RA
-mytable <- table(dem04$NBHEUR_AR6bis, dem04$duree_de_mois)
+dat1208 <- read.csv("chom12mois08.csv", header=T, sep=",")
+
+dem1208 <- tbl_df(dat1208)
+
+mytable <- table(dem1208$salpourc_ar1)
 x <- round(prop.table(mytable), digits=4) * 100
-barplot(x, beside = T, main="Distrib nb hours for 6th RA month (2004, unemp>12mths)", xlab="Type of contract", ylab="Frequency", col = "lightblue", ylim=c(0,25))
+barplot(x, main="Distribution of RA replacement rates, 1st RA month (2008)", xlab="Replacement rates", ylab="Frequency", col = "lightblue", xlim=c(0,200), ylim=c(0,6))
 abline(h=seq(0,100,10), col = adjustcolor("black", alpha.f = 0.2),
        lty = 6)
 
-
-
-####### 12eme mois de RA
-mytable <- table(dem04$NBHEUR_AR12bis, dem04$duree_de_mois)
+mytable <- table(dem1208$salpourc_ar6)
 x <- round(prop.table(mytable), digits=4) * 100
-barplot(x, beside = T, main="Distrib nb hours for 12th RA month (2004, unemp>12mths)", xlab="Type of contract", ylab="Frequency", col = "lightblue", ylim=c(0,25))
+barplot(x, main="Distribution of RA replacement rates, 6th RA month (2008)", xlab="Replacement rates", ylab="Frequency", col = "lightblue", xlim=c(0,150), ylim=c(0,6))
 abline(h=seq(0,100,10), col = adjustcolor("black", alpha.f = 0.2),
        lty = 6)
 
-mytable <- table(dem08$NBHEUR_AR12bis, dem08$duree_de_mois)
+mytable <- table(dem1208$salpourc_ar12)
 x <- round(prop.table(mytable), digits=4) * 100
-barplot(x, beside = T, main="Distrib nb hours for 12th RA month (2008, unemp>12mths)", xlab="Type of contract", ylab="Frequency", col = "lightblue", ylim=c(0,25))
+barplot(x, main="Distribution of RA replacement rates, 12th RA month (2008)", xlab="Replacement rates", ylab="Frequency", col = "lightblue", xlim=c(0,150), ylim=c(0,6))
 abline(h=seq(0,100,10), col = adjustcolor("black", alpha.f = 0.2),
        lty = 6)
+
 
 
 ## FIRST REDUCED ACTIVITY PER UNEMPLOYMENT DURATION
@@ -123,21 +73,6 @@ abline(h=seq(0,100,10), col = adjustcolor("black", alpha.f = 0.2),
 
 mytable <- table(dem04$DUREE_AVT_AR1, dem04$passe_duree_avt_ar1)
 x <- round(prop.table(mytable), digits=4) * 100
-barplot(x, beside = T, main="Distribution of unemployment motives in 2004", xlab="Type of contract", ylab="Frequency", col = "lightblue", ylim=c(0,100))
-abline(h=seq(0,100,10), col = adjustcolor("black", alpha.f = 0.2),
-       lty = 6)
-
-## FIRST REDUCED ACTIVITY PER ACTIVITY SECTOR
-
-mytable <- table(dem04$DUREE_AVT_AR1, dem04$metier_service)
-x <- round(prop.table(mytable), digits=4) * 100
-barplot(x, beside = T, main="Distribution of unemployment motives in 2004", xlab="Type of contract", ylab="Frequency", col = "lightblue", ylim=c(0,100))
-abline(h=seq(0,100,10), col = adjustcolor("black", alpha.f = 0.2),
-       lty = 6)
-
-mytable <- table(dem04$DUREE_AVT_AR1, dem04$metier_industrie)
-x <- round(prop.table(mytable), digits=4) * 100
-
 barplot(x, beside = T, main="Distribution of unemployment motives in 2004", xlab="Type of contract", ylab="Frequency", col = "lightblue", ylim=c(0,100))
 abline(h=seq(0,100,10), col = adjustcolor("black", alpha.f = 0.2),
        lty = 6)
